@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  frontend:
+    build: 
+      context: ./docker/node
+    volumes:
+      - ./frontend/:/app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    command: yarn start
+        #docker-compose run frontend npx create-react-app monsters-rolodex
